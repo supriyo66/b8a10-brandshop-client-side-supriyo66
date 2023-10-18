@@ -14,7 +14,15 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    
     children:[
+      {
+     
+        path: "/",
+        element:<Home></Home>,
+        loader:()=>fetch('http://localhost:5000/food')
+      
+      },
       
       {
      
@@ -28,12 +36,7 @@ const router = createBrowserRouter([
       element:<UpdateFood></UpdateFood>
     
     },
-      {
      
-      path: "/",
-      element:<Home></Home>
-    
-    },
   ],
   },
 ]);
