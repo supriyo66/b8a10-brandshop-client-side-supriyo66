@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 
 const FoodDetails = () => {
@@ -24,7 +24,9 @@ const FoodDetails = () => {
     
     <div className="card-actions">
     <div className="btn-group btn-group-vertical mt-5">
+  <Link to={`/updateFood/${_id}`}>
   <button className="btn btn-active">Update</button>
+  </Link>
   
   <button className="btn bg-emerald-400">Details</button>
 </div>
