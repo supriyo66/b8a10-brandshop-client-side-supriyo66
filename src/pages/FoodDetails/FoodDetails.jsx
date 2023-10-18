@@ -28,7 +28,7 @@ const FoodDetails = () => {
   <button className="btn btn-active">Update</button>
   </Link>
   
-  <button className="btn bg-emerald-400">Details</button>
+  <Link to={`/details2/${_id}`}><button className="btn bg-emerald-400">Details</button></Link>
 </div>
     </div>
   </div>

@@ -10,6 +10,7 @@ import Home from './pages/Home/Home';
 import AddFood from './pages/AddFood/AddFood';
 import UpdateFood from './pages/UpdateFood/UpdateFood';
 import FoodDetails from './pages/FoodDetails/FoodDetails';
+import Details from './pages/Details/Details';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,13 @@ const router = createBrowserRouter([
      
       path: `/details/:_id`,
       element:<FoodDetails></FoodDetails>,
+      loader:()=>fetch('http://localhost:5000/food')
+    
+    },
+      {
+     
+      path: `/details2/:_id`,
+      element:<Details></Details>,
       loader:()=>fetch('http://localhost:5000/food')
     
     },
