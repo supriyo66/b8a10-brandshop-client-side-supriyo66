@@ -11,6 +11,8 @@ import AddFood from './pages/AddFood/AddFood';
 import UpdateFood from './pages/UpdateFood/UpdateFood';
 import FoodDetails from './pages/FoodDetails/FoodDetails';
 import Details from './pages/Details/Details';
+import Login from './pages/Login/Login';
+import Registration from './pages/Registration/Registration';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +55,20 @@ const router = createBrowserRouter([
       loader:()=>fetch('http://localhost:5000/food')
     
     },
+      {
+     
+      path:'/login',
+      element:<Login></Login>
+      
+    
+    },
+      {
+     
+      path:'/registration',
+      element:<Registration></Registration>
+      
+    
+    }
      
   ],
   },
