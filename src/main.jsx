@@ -9,6 +9,7 @@ import Root from './Layouts/Root.jsx';
 import Home from './pages/Home/Home';
 import AddFood from './pages/AddFood/AddFood';
 import UpdateFood from './pages/UpdateFood/UpdateFood';
+import FoodDetails from './pages/FoodDetails/FoodDetails';
 
 const router = createBrowserRouter([
   {
@@ -32,8 +33,16 @@ const router = createBrowserRouter([
     },
       {
      
-      path: "updateFood",
-      element:<UpdateFood></UpdateFood>
+      path: "updateFood/:id",
+      element:<UpdateFood></UpdateFood>,
+      loader:({params})=>fetch(`http://localhost:5000/food/${params.id}`)
+    
+    },
+      {
+     
+      path: `/details/:_id`,
+      element:<FoodDetails></FoodDetails>,
+      loader:()=>fetch('http://localhost:5000/food')
     
     },
      

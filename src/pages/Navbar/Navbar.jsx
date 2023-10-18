@@ -7,7 +7,7 @@ const Navbar = () => {
     const navLinks=<>
 
     <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink to='/about'>Add Product</NavLink></li>
+    <li><NavLink to='/addFood'>Add Product</NavLink></li>
     <li><NavLink to='/contact'>My Cart</NavLink></li>
     </>
     return (
@@ -22,7 +22,7 @@ const Navbar = () => {
         {navLinks}
       </ul>
     </div>
-    <div className="flex items-center space-x-2"> {/* Add this div */}
+    <div className="flex items-center space-x-2"> 
             <img
               src="https://i.ibb.co/vhSKDm8/food.jpg"
               className="w-12 h-12 rounded-full"
