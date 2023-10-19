@@ -15,10 +15,12 @@ import app from '../../firebase/firebase.config';
         return createUserWithEmailAndPassword(auth,email,password)
      }
      const signInUser=(email,password)=>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth,email,password)
      }
 
      const logOut=()=>{
+        setLoading(true)
         return signOut(auth)
      }
 
@@ -27,7 +29,7 @@ import app from '../../firebase/firebase.config';
             setUser(currentUser)
             console.log('fhfg', currentUser)
         
-            // setLoading(false)
+            setLoading(false)
   
          }))
           return ()=> unSubscribe();
