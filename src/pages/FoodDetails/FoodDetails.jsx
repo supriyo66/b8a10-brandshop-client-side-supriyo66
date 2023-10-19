@@ -9,7 +9,7 @@ const FoodDetails = () => {
     return (
         <div>
             <div className="card  bg-base-100 shadow-xl">
-  <figure className="px-10 pt-10 w-1/2 mx-auto">
+  <figure className="px-10 pt-10 w-full mx-auto md:w-2/3 lg:w-1/2">
     <img src={food.photo} className="rounded-xl" />
   </figure>
   <div className="mx-auto flex justify-around py-8">

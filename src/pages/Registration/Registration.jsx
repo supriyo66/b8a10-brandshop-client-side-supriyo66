@@ -45,7 +45,7 @@ const Registration = () => {
   };
 
   return (
-    <div className=" container mx-auto my-10 w-1/2 bg-base-200">
+    <div className=" container mx-auto my-10 w-full bg-base-200 md:w-2/3 lg:w-1/2">
       <ToastContainer />
       <div className="flex items-center justify-center">
         <div className=" flex-shrink-0 w-full  shadow-2xl bg-base-100">

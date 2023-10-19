@@ -7,7 +7,7 @@ const Details = () => {
     const food=foods.find(food=>food._id == _id)
     return (
         <div className="container mx-auto">
-            <div className="card w-1/2 bg-base-100 shadow-xl container mx-auto ">
+            <div className="card w-full bg-base-100 shadow-xl container mx-auto md:w-2/3 lg:w-1/2 ">
             <figure className="h-96 w-full">
           <img src={food.photo} alt={food.name} className="object-cover w-full h-full" />
         </figure>

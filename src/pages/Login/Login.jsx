@@ -4,7 +4,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const {signInUser}=useContext(AuthContext);
+    const {signInUser,signInWithGoogle}=useContext(AuthContext);
     const location=useLocation();
     const navigate=useNavigate();
     const handleLogin = async (e) => {
@@ -20,9 +20,17 @@ const Login = () => {
             navigate(location?.state? location.state : '/')
         })
     };
+    const handleGoogle=()=>{
+        signInWithGoogle()
+        .then(res=>console.log(res.user))
+        .catch(error=>{
+          console.error(error);
+        //   setLoginError(error.message)
+        })
+      }
 
     return (
-        <div className="container mx-auto w-1/2 mt-10 bg-base-200">
+        <div className="container mx-auto w-full mt-10 bg-base-200 md:w-2/3 lg:w-1/2">
           <div className="flex items-center justify-center ">
             <div className=" flex-shrink-0 w-full  shadow-2xl bg-base-100">
               <form onSubmit={handleLogin} className="card-body">
@@ -52,6 +60,9 @@ const Login = () => {
               <p className="text-center text-xl font-medium p-5">New here? <Link to='/registration' className="text-blue-700">Register</Link></p>
             </div>
           </div>
+          <div className="text-center mt-5 py-2">
+      <button onClick={handleGoogle}  className=" btn btn-primary text-xl font-medium ">Google Sign In</button>
+      </div>
         </div>
     );
 };
