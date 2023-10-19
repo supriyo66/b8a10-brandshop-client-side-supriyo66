@@ -14,18 +14,22 @@ import Details from './pages/Details/Details';
 import Login from './pages/Login/Login';
 import Registration from './pages/Registration/Registration';
 import AuthProvider from './pages/Provider/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Error from './pages/Error/Error';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Error></Error>,
     
     children:[
       {
      
         path: "/",
         element:<Home></Home>,
+        
         loader:()=>fetch('http://localhost:5000/food')
       
       },
@@ -33,27 +37,27 @@ const router = createBrowserRouter([
       {
      
       path: "addFood",
-      element:<AddFood></AddFood>
+      element:<PrivateRoute><AddFood></AddFood></PrivateRoute>
     
     },
       {
      
       path: "updateFood/:id",
-      element:<UpdateFood></UpdateFood>,
+      element:<PrivateRoute><UpdateFood></UpdateFood></PrivateRoute>,
       loader:({params})=>fetch(`http://localhost:5000/food/${params.id}`)
     
     },
       {
      
       path: `/details/:_id`,
-      element:<FoodDetails></FoodDetails>,
+      element:<PrivateRoute><FoodDetails></FoodDetails></PrivateRoute>,
       loader:()=>fetch('http://localhost:5000/food')
     
     },
       {
      
       path: `/details2/:_id`,
-      element:<Details></Details>,
+      element:<PrivateRoute><Details></Details></PrivateRoute>,
       loader:()=>fetch('http://localhost:5000/food')
     
     },
