@@ -13,7 +13,7 @@ const AddFood = () => {
         const newFood={name,brandName,typeName,price,des,rating,photo}
         console.log(newFood);
 
-        fetch('http://localhost:5000/food',{
+        fetch('https://food-store-server-cb4c7wkn8-supriyo66.vercel.app/food',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

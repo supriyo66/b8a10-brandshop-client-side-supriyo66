@@ -1,5 +1,7 @@
 # React + Vite
 
+Live link: https://food-store-8c281.web.app/
+
 About my project with 5 bullet points:
 
 Firebase Authentication Integration:

@@ -19,7 +19,7 @@ const UpdateFood = () => {
 
         const UpdateFood={name,brandName,typeName,price,des,rating,photo}
         console.log(UpdateFood);
-        fetch(`http://localhost:5000/food/${_id}`,{
+        fetch(`https://food-store-server-cb4c7wkn8-supriyo66.vercel.app/food/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'

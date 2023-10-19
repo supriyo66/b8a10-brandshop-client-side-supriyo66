@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         path: "/",
         element:<Home></Home>,
         
-        loader:()=>fetch('http://localhost:5000/food')
+        loader:()=>fetch('https://food-store-server-cb4c7wkn8-supriyo66.vercel.app/food')
       
       },
       
@@ -44,21 +44,21 @@ const router = createBrowserRouter([
      
       path: "updateFood/:id",
       element:<PrivateRoute><UpdateFood></UpdateFood></PrivateRoute>,
-      loader:({params})=>fetch(`http://localhost:5000/food/${params.id}`)
+      loader:({params})=>fetch(`https://food-store-server-cb4c7wkn8-supriyo66.vercel.app/food/${params.id}`)
     
     },
       {
      
       path: `/details/:_id`,
       element:<PrivateRoute><FoodDetails></FoodDetails></PrivateRoute>,
-      loader:()=>fetch('http://localhost:5000/food')
+      loader:()=>fetch('https://food-store-server-cb4c7wkn8-supriyo66.vercel.app/food')
     
     },
       {
      
       path: `/details2/:_id`,
       element:<PrivateRoute><Details></Details></PrivateRoute>,
-      loader:()=>fetch('http://localhost:5000/food')
+      loader:()=>fetch('https://food-store-server-cb4c7wkn8-supriyo66.vercel.app/food')
     
     },
       {
